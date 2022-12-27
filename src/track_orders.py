@@ -7,11 +7,9 @@ class TrackOrders:
         self.lista_pedidos = []
         pass
 
-
     def __len__(self):
         pass
         return len(self.lista_pedidos)
-
 
     def add_new_order(self, customer, order, day):
         pass
@@ -21,7 +19,6 @@ class TrackOrders:
             'day': day
         })
         return self.lista_pedidos    
-
 
     def get_most_ordered_dish_per_customer(self, customer):
         pass
@@ -34,8 +31,7 @@ class TrackOrders:
 
         mais_pedida = orders_statistics.most_common()
 
-        return mais_pedida[0][0]     
-
+        return mais_pedida[0][0]
 
     def get_never_ordered_per_customer(self, customer):
         pass
@@ -53,7 +49,6 @@ class TrackOrders:
 
         return all_unique_orders.difference(customer_unique_orders)        
 
-
     def get_days_never_visited_per_customer(self, customer):
         pass
         customer_days = []
@@ -70,14 +65,12 @@ class TrackOrders:
 
         return all_unique_days.difference(customer_unique_days)
 
-
     def get_all_days_list(self):
         all_days = []
         for pedidos in self.lista_pedidos:
             all_days.append(pedidos['day'])
 
         return all_days        
-
 
     def get_busiest_day(self):
         pass
@@ -86,8 +79,7 @@ class TrackOrders:
         days_statistics = all_unique_days.most_common()
 
         return days_statistics[0][0]
-
-     
+  
     def get_least_busy_day(self):
         pass
         all_days = self.get_all_days_list()
