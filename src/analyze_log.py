@@ -4,6 +4,7 @@ import csv
 every_product = ["hamburguer", "coxinha", "misto-quente", "pizza"]
 days = ["sabado", "terça-feira", "segunda-feira"]
 
+
 def get_data(path_file):
     if ".csv" not in path_file:
         raise FileNotFoundError(f"Extensão inválida. {path_file}")
@@ -46,11 +47,13 @@ def get_list(list):
                 )
     return person_list
 
+
 def get_food_count_by_person(person, list):
     for row in list:
         keys = row.keys()
         if person in keys:
             return row
+
 
 def most_requested_food_by_maria(list):
     maria_food_count = get_food_count_by_person("maria", list)
@@ -118,8 +121,8 @@ def days_that_joao_never_went(list):
 
     return never_asked
 
+
 def analyze_log(path_to_file):
-   # raise NotImplementedError
     csv_list = get_data(path_to_file)
     person_list = get_list(csv_list)
     maria = most_requested_food_by_maria(person_list)
